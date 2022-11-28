@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'store/review.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Review</title>
+  </head>
+  <body>
+    <div
+      class="container_bg"
+      style="background-image: url('{% static 'store/intro.webp'%}')"
+    >
+    <div class='container_h'>
+      <div class="header">
+        <div class='left'>
+          <a href="#"><i class="fa-solid fa-phone"></i></i>+998935300457</a>
+          <a href="#"><i class="fa-brands fa-telegram"></i>youremail@email.com</a>
+        </div>
+        <div class='right'>
+          <div class=social_media>
+            <p>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-solid fa-globe"></i></i></i></a>
+            </p>
+          </div>
+          <div class='reg'>
+            <a href="#">SIGN UP</a> <a href="#">LOGIN</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='navbar'>
+          <div><p>LIQUOR <span>STORE</span></p></div>
+              <div class='links'>
+               <a id='home' href="{% url 'store:home' %}">HOME</a>
+               <a href='#'>ABOUT</a>
+               <a href="{% url 'store:products' %}">PRODUCTS</a>
+               <a href="#">BLOG</a>
+               <a href="{% url 'store:review' %}">CONTACT</a>
+               <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+             </div>
+        </div>
+      <div class="container_pic">
+        <div class="review_row">
+          <h1>Liquor <span id="span">Store</span></h1>
+          <h3>Let us know what you think</h3>
+          <form method="POST">
+            {% csrf_token %} {% for form in form %}
+
+            <div class="form">
+              {{form.label_tag}}
+              <p>{{form}}</p>
+            </div>
+
+            {% endfor %}
+            <input id="input" type="submit" />
+          </form>
+        </div>
+      </div>
+      <div class="container_f">
+        <div class="footer">
+          <div class="block">
+            <h2>LIQUOR <span id="span">STORE</span></h2>
+            <p>
+              Far far away, behind the <br />
+              word mountains, far from <br />
+              the countries.
+            </p>
+            <div class="sm_links">
+              <span
+                ><a href="#"><i class="fa-brands fa-twitter"></i></a
+              ></span>
+              <span
+                ><a href="#"><i class="fa-brands fa-facebook"></i></a
+              ></span>
+              <span
+                ><a href="#"><i class="fa-brands fa-instagram"></i></a
+              ></span>
+            </div>
+          </div>
+          <div class="block">
+            <h2>My Account</h2>
+            <a href="#">My Account</a>
+            <a href="#">Register</a>
+            <a href="#">Log In</a>
+            <a href="#">My Order</a>
+          </div>
+          <div class="block">
+            <h2>Information</h2>
+            <a href="#">About Us</a>
+            <a href="#">Catalogue</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#"></a>
+          </div>
+          <div class="block">
+            <h2>Quick Link</h2>
+            <a href="#">New User</a>
+            <a href="#">Help Center</a>
+            <a href="#">Report Spam</a>
+            <a href="#">FAQ</a>
+          </div>
+          <div class="block">
+            <h2>Have Questions?</h2>
+            <p>
+              203 Fake St. Mountain <br />
+              View, San Francisco, <br />
+              California, USA
+            </p>
+            <a href="#">+9 999 9999 999</a>
+            <a href="#">info@yourdomain.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
